@@ -13,7 +13,8 @@ def main():
 
 
 if __name__ == "__main__":
+	GPIO.setmode(GPIO.BOARD)  # to setup the numbering of pin in raspberry
 	interrupt_pin = 2
-	GPIO.setup(interrupt_pin, GPIO.IN)  # Acqua
+	GPIO.setup(interrupt_pin, GPIO.IN)  # Interrupt pin
 	GPIO.add_event_detect(interrupt_pin, GPIO.RISING, callback=interruptReceived)
 	main()
